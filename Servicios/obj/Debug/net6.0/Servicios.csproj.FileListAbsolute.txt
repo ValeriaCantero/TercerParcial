@@ -1,0 +1,15 @@
+C:\Users\vcantero\source\repos\OptativoParcial\Servicios\bin\Debug\net6.0\Servicios.deps.json
+C:\Users\vcantero\source\repos\OptativoParcial\Servicios\bin\Debug\net6.0\Servicios.dll
+C:\Users\vcantero\source\repos\OptativoParcial\Servicios\bin\Debug\net6.0\Servicios.pdb
+C:\Users\vcantero\source\repos\OptativoParcial\Servicios\bin\Debug\net6.0\Infraestructura.dll
+C:\Users\vcantero\source\repos\OptativoParcial\Servicios\bin\Debug\net6.0\Infraestructura.pdb
+C:\Users\vcantero\source\repos\OptativoParcial\Servicios\obj\Debug\net6.0\Servicios.csproj.AssemblyReference.cache
+C:\Users\vcantero\source\repos\OptativoParcial\Servicios\obj\Debug\net6.0\Servicios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vcantero\source\repos\OptativoParcial\Servicios\obj\Debug\net6.0\Servicios.AssemblyInfoInputs.cache
+C:\Users\vcantero\source\repos\OptativoParcial\Servicios\obj\Debug\net6.0\Servicios.AssemblyInfo.cs
+C:\Users\vcantero\source\repos\OptativoParcial\Servicios\obj\Debug\net6.0\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\vcantero\source\repos\OptativoParcial\Servicios\obj\Debug\net6.0\Servicios.csproj.CopyComplete
+C:\Users\vcantero\source\repos\OptativoParcial\Servicios\obj\Debug\net6.0\Servicios.dll
+C:\Users\vcantero\source\repos\OptativoParcial\Servicios\obj\Debug\net6.0\refint\Servicios.dll
+C:\Users\vcantero\source\repos\OptativoParcial\Servicios\obj\Debug\net6.0\Servicios.pdb
+C:\Users\vcantero\source\repos\OptativoParcial\Servicios\obj\Debug\net6.0\ref\Servicios.dll

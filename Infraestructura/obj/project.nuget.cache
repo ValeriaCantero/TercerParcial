@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "bfox8GxjsTkgdRSWTSRi+xe7n3Z7szGSBAauXStfu80MK23qtbL4NDbxJAqWVwr6QVPR7qXkw5nH1W83mUnjtQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vcantero\\source\\repos\\OptativoParcial\\Infraestructura\\Infraestructura.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vcantero\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\vcantero\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
+    "C:\\Users\\vcantero\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

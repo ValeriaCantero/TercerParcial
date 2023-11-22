@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "kKD7GymV4Jq6cGJt2+G+EbwaxuiA9lCLZYxQTFEju1+bBdMFVdFyvFwxVpvuPEWm7N8LUjZ5haYqxBqB3FWB4w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vcantero\\source\\repos\\OptativoParcial\\OptativoParcial\\OptativoParcial.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vcantero\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\vcantero\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
+    "C:\\Users\\vcantero\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
