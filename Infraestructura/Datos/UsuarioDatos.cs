@@ -48,10 +48,56 @@ namespace Infraestructura.Datos
                     nombre_usuario = reader.GetString("nombre_usuario"),
                     nivel = reader.GetString("nivel"),
                     estado = reader.GetString("estado"),
-                    contrasena= reader.GetString("contrasena")
+                    contrasena= reader.GetString("contrasena"),
+                    persona = new PersonaModel
+                    {
+                        idPersona = reader.GetInt32("idPersona"),
+                        nombre = reader.GetString("nombre"),
+                        apellido = reader.GetString("apellido"),
+                        nroDocumento = reader.GetString("nro_Documento"),
+                        direccion = reader.GetString("direccion"),
+                        email = reader.GetString("email"),
+                        celular = reader.GetString("celular"),
+                        estado = reader.GetString("estado"),
+                    }
                 };
             }
             return null;
+        }
+
+        public List<UsuarioModel> obtenerLosUsuarios()
+        {
+            var conn = conexion.GetConexion();
+            var comando = new Npgsql.NpgsqlCommand($"SELECT p.*, u.* " +
+                                                   $"FROM persona p " +
+                                                   $"INNER JOIN usuarios u ON p.idPersona = u.idPersona ", conn);
+            List<UsuarioModel> usuarios = new List<UsuarioModel>();
+
+            using var reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                usuarios.Add(new UsuarioModel()
+                {
+                    idUsuario = reader.GetInt32("idUsuario"),
+                    nombre_usuario = reader.GetString("nombre_usuario"),
+                    contrasena = reader.GetString("contrasena"),
+                    nivel = reader.GetString("nivel"),
+                    estado = reader.GetString("estado"),
+                    persona = new PersonaModel()
+                    {
+                        idPersona = reader.GetInt32("idPersona"),
+                        nombre = reader.GetString("nombre"),
+                        apellido = reader.GetString("apellido"),
+                        nroDocumento = reader.GetString("nro_Documento"),
+                        direccion = reader.GetString("direccion"),
+                        email = reader.GetString("email"),
+                        celular = reader.GetString("celular"),
+                        estado = reader.GetString("estado"),
+                    }
+                });
+            }
+
+            return usuarios;
         }
 
         public UsuarioModel EliminarUsuarioPorId(int id)

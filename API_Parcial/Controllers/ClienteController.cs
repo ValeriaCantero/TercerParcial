@@ -22,12 +22,7 @@ namespace API_Parcial.Controllers
             return Ok(cliente);
         }
 
-        //[HttpPost]
-        //public IActionResult InsertarClienteAccion([FromBody] Infraestructura.Modelos.ClienteModel cliente)
-        //{
-        //    servicio.insertarCliente(cliente);
-        //    return Ok("El registro se creó con éxito");
-        //}
+        
 
         [HttpPost("Registrar")]
         public IActionResult RegistrarClienteBasico([FromBody] Modelos.ClienteModelo modelo)

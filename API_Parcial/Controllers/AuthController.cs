@@ -16,7 +16,7 @@ namespace API_Parcial.Controllers
         private readonly IConfiguration _configuracion;
         private UsuarioService servicio;
 
-        public AuthController (IConfiguration configuration)
+        public AuthController(IConfiguration configuration)
         {
             _configuracion = configuration;
             servicio = new UsuarioService(connectionString);
@@ -25,27 +25,28 @@ namespace API_Parcial.Controllers
         [HttpPost("Login")]
         public IActionResult Post([FromBody] LoginModel login)
         {
-            var userIsValid = validUser(login);
-            if (!userIsValid)
+            var usuario = servicio.obtenerUsuarioNombre(login.UserName);
+
+            if (usuario == null || usuario.contrasena != login.UserName)
             {
                 return Unauthorized();
             }
-            var token = GenerateJWT(login.UserName);
-            return Ok(token);
+            var token = GenerateJWT(usuario);
+            return Ok(new { jwt = token });
         }
 
-        private object GenerateJWT(string userName)
+        private object GenerateJWT(UsuarioModel usuario)
         {
-           
-           var segurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuracion["Jwt:Key"]));
-           var credentials = new SigningCredentials (segurityKey, SecurityAlgorithms.HmacSha256);
+
+            var segurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuracion["Jwt:Key"]));
+            var credentials = new SigningCredentials(segurityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, userName),
-                new Claim(JwtRegisteredClaimNames.Name, "Julia"),
-                new Claim(JwtRegisteredClaimNames.FamilyName, " Colman"),
-                new Claim(JwtRegisteredClaimNames.Email, "juliacolman@gmail.com"),
+                new Claim(JwtRegisteredClaimNames.Sub, usuario.nombre_usuario),
+                new Claim(JwtRegisteredClaimNames.Name, usuario.persona.nombre),
+                new Claim(JwtRegisteredClaimNames.FamilyName, usuario.persona.apellido),
+                new Claim(JwtRegisteredClaimNames.Email, usuario.persona.email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
@@ -61,12 +62,6 @@ namespace API_Parcial.Controllers
         }
 
 
-                
-                    
-            //  return login.UserName == "admin" && login.Password == 321";
-
-       
-
         private bool validUser(LoginModel login)
         {
 
@@ -75,16 +70,15 @@ namespace API_Parcial.Controllers
             {
                 return true;
             }
+
             return false;
-         
 
         }
 
-    }
-
-    public class LoginModel
-    {
-        public string UserName { get; set; }
-        public string Password { get; set; }
+        public class LoginModel
+        {
+            public string UserName { get; set; }
+            public string Password { get; set; }
+        }
     }
 }

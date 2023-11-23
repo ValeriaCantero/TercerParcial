@@ -23,11 +23,6 @@ namespace Servicios.ContactosService
             usuarioDatos.insertarUsuario(usuario);
         }
 
-        //public UsuarioModel obtenerUsuarioPorId(int id)
-        //{
-        //    return usuarioDatos.obtenerUsuarioPorId(id);
-        //}
-
         public UsuarioModel obtenerUsuarioNombre(string username)
         {
             return usuarioDatos.obtenerUsuarioNombre(username);
